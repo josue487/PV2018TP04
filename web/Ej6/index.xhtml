@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Gestor de autos</title>
+    </h:head>
+    <h:body>
+        
+        
+    
+    <p:dataList id="dtlAutos" value="#{autosFormBeans.gc.autos}" var="lista" type="unordered">
+        
+        #{lista.numero}, Marca #{lista.marca}, Color #{lista.color}, Modelo #{lista.modelo}, patente #{lista.patente}
+        
+    </p:dataList>
+        
+        <p:outputLabel id="lblEleccionAuto" value="Elija el auto que desea modificar"/>
+        <p:inputNumber id="txtopcion" value="#{autosFormBeans.opcion}"/>
+        <br></br>
+        
+        
+        <p:commandButton onclick="PF('dlg2').show();" value="modificar" type="button"  />
+
+        <p:commandButton value="refrescar " action="#{autosFormBeans.cargarAutosALaLista()}" type="button" update="dtlAutos"  />
+
+        
+        <p:dialog id="dlgAutoElegido" header="Actualizar datos" widgetVar="dlg2" modal="true" height="100">
+            <h:outputLabel id="lblMarca" value="Marca "></h:outputLabel>
+            <p:inputText id="txtMarca" value="#{autosFormBeans.marca}"></p:inputText>
+            <br></br>
+            <h:outputLabel id="lblModelo" value="Modelo "></h:outputLabel>
+            <p:inputText id="txtModelo" value="#{autosFormBeans.modelo}"></p:inputText>
+            <br></br>
+            <h:outputLabel id="lblColor" value="Color "></h:outputLabel>
+            <p:inputText id="txtColor" value="#{autosFormBeans.color}"></p:inputText>
+            <br></br>
+            <h:outputLabel id="lblPatente" value="Patente "></h:outputLabel>
+            <p:inputText id="txtPatente" value="#{autosFormBeans.patente}"></p:inputText>
+            <br></br>
+            <h:outputLabel id="lblCombustible" value="Combustible "></h:outputLabel>
+            <p:inputText id="txtCombustible" value="#{autosFormBeans.tipodecombustible}"></p:inputText>
+            <br></br>
+            <p:commandButton action="#{autosFormBeans.actualizarAutos()}" value="actualizar" type="button" update="dtlAutos"  />
+        </p:dialog> 
+    
+    </h:body>
+</html>
+
