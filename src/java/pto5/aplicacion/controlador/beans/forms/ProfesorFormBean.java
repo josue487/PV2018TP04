@@ -21,7 +21,7 @@ public class ProfesorFormBean implements Serializable{
     private String apellido;
     private String nombre;
     private int legajo;
-    
+    //solo prueba
     private Profesor profesor;
 
     /**
