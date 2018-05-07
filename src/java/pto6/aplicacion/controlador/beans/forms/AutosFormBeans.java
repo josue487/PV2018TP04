@@ -30,19 +30,6 @@ public class AutosFormBeans implements Serializable{
         }
     
     
-    public String validarOpcion(){
-    boolean existe=false;
-    for(Auto aut: getGc().getAutos()){
-            if(aut.getNumero()==getOpcion()){
-                existe=true;
-            }
-    }
-    if(existe==false){
-        return "No existe la opcion ingresada";}
-    else{
-        return "Auto encontrado";
-    }
-}
     public void actualizarAutos(){
         for(Auto aut: this.getGc().getAutos()){
             
