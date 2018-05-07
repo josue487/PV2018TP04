@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+         <p:panel id="pnlNumeros" header="Numeros">
+            <h:form id="frmNumeros">
+                <h:panelGrid id="tblNumeros" columns="2">
+                    
+                    <p:outputLabel id="lblNumero" value="Ingrese valor"/>
+                    <p:inputNumber id="txtNumero" thousandSeparator="." decimalSeparator=","
+                                   value="#{numeroFormBean.numero.valor}"/>
+                    
+                    <p:commandButton id="btnagregar" value="Agregar"
+                                     update="dtlNumero" action="#{numeroFormBean.agregarNumeroALista()}"/>
+                    <p:commandButton id="btndeterminar" value="Calcular"
+                                     update="lblmayor lblmenor lblpromedio" action="#{numeroFormBean.determinarMayorMenorYPromedio1()}"/>
+                    
+                    
+                    <p:outputLabel id="lblmayor" value="mayor #{numeroFormBean.mayor}"/>
+                    <p:outputLabel id="lblmenor" value="menor #{numeroFormBean.menor}"/>
+                    <p:outputLabel id="lblpromedio" value="promedio #{numeroFormBean.promedio}"/>
+                </h:panelGrid>
+            </h:form>
+          </p:panel>
+        
+        <p:dataList id="dtlNumero" value="#{numeroFormBean.gc.numeros}" var="num" type="unordered">
+        
+            #{num.valor}
+        
+        </p:dataList>
+
+    </h:body>
+</html>
+
