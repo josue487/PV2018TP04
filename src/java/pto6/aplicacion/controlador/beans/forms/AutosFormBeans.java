@@ -32,13 +32,14 @@ public class AutosFormBeans implements Serializable{
     
     public void actualizarAutos(){
         for(Auto aut: this.getGc().getAutos()){
-            
+            if( opcion==aut.getNumero()){
+                
                 aut.setColor(getColor());
                 aut.setMarca(getMarca());
                 aut.setModelo(getModelo());
                 aut.setPatente(getPatente());
                 aut.setTipodecombustible(getTipodecombustible());
-            
+            }
         }
         
     }
