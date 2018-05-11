@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Calculadora</title>
+    </h:head>
+    <h:body>
+        <h:form>
+        <p:outputLabel id="lblNumeroA" value="Ingrese primer numero"></p:outputLabel>
+        <p:inputNumber id="txtNumeroA" value="#{calculadoraFormBean.calculadora.numeroA}"></p:inputNumber>
+        <p:outputLabel id="lblNumeroB" value="Ingrese segundo numero"></p:outputLabel>
+        <p:inputNumber id="txtNumeroB" value="#{calculadoraFormBean.calculadora.numeroB}"></p:inputNumber>
+        <br></br>
+        
+        <p:commandButton id="btnSumar" value="Sumar" update="lblResultadoSuma"></p:commandButton>
+        <p:outputLabel id="lblResultadoSuma" value="#{calculadoraFormBean.calculadora.sumar()}"></p:outputLabel>
+        <br></br>
+         
+        
+        <p:commandButton id="btnRestar" value="Restar" update="lblResultadoResta"></p:commandButton>
+        <p:outputLabel id="lblResultadoResta" value="#{calculadoraFormBean.calculadora.restar()}"></p:outputLabel>
+        <br></br>
+        
+        
+         <p:commandButton id="btnMultiplicar" value="Multiplicar" update="lblResultadoMultiplicar"></p:commandButton>
+         <p:outputLabel id="lblResultadoMultiplicar" value="#{calculadoraFormBean.calculadora.multiplicar()}"></p:outputLabel>
+        <br></br>
+        
+         <p:commandButton id="btnDividir" value="Dividir" update="lblResultadoDividir"></p:commandButton>
+         <p:outputLabel id="lblResultadoDividir" value="#{calculadoraFormBean.calculadora.dividir()}"></p:outputLabel>
+        <br></br>
+        
+         <p:commandButton id="btnPotencia" value="Potencia" update="lblResultadoPotencia"></p:commandButton>
+         <p:outputLabel id="lblResultadoPotencia" value="#{calculadoraFormBean.calculadora.potencia()}"></p:outputLabel>
+         <br></br>
+        </h:form>
+        
+        
+        
+    </h:body>
+</html>
+
