@@ -7,6 +7,7 @@ package pto5.aplicacion.controlador.beans.forms;
 
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import pto5.aplicacion.modelo.dominio.Profesor;
 
