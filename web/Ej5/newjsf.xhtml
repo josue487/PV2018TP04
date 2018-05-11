@@ -4,7 +4,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Ej5</title>
     </h:head>
    <h:body>
         <p:panel id="pnlProfesor" header="Gestion de Profesor">
@@ -12,28 +12,30 @@
             <p:panelGrid id="grdProfesor" columns="2">
                 
                     <p:outputLabel id="lblLegajo" value=" Legajo"></p:outputLabel>
-                    <p:inputNumber id="txtLegajo" value="#{profesorFormBean.legajo}"></p:inputNumber>
+                    <p:inputNumber id="txtLegajo" value="#{profesorFormBean.legajo}"
+                                   ></p:inputNumber>
                     
                     <p:outputLabel id="lblApellido" value=" Apellido"></p:outputLabel>
-                    <p:inputText id="txtApellido" value="#{profesorFormBean.apellido}"></p:inputText>
+                    <p:inputText id="txtApellido" value="#{profesorFormBean.apellido}" required="true" placeholder="ingresse Apellido"></p:inputText>
                     
                     <p:outputLabel id="lblNombre" value=" Nombre"></p:outputLabel>
                     <p:inputText id="txtNombre" value="#{profesorFormBean.profesor.nombre}"></p:inputText>
                     
-                   <p:commandButton onclick="PF('dlg2').show();" value="Mostrar" update="lblNombreejm lblLegajoProfesor lblApellidoProfesor" type="button"  />
+                   <p:commandButton value="Cargar" update=" :frmDialogoProfesor" />
                    
-                   <p:outputLabel id="lblNombreejm" value="#{profesorFormBean.apellido}"></p:outputLabel>
+                   <p:commandButton onclick="PF('dlg2').show();" value="Mostrar"  type="button"  />
             </p:panelGrid>
                 </h:form>
         </p:panel>
-                    
+       <h:form id="frmDialogoProfesor">
                     <p:dialog id="dlgDatosProfesor" header="Modal Dialog" widgetVar="dlg2" modal="true" height="100">
-                        <h:outputLabel id="lblLegajoProfesor" value="Legajo: #{profesorFormBean.legajo}}"></h:outputLabel>
+                        <h:outputLabel id="lblLegajoProfesor" value="Legajo: #{profesorFormBean.legajo}"></h:outputLabel>
                         <br></br>
                         <h:outputLabel id="lblApellidoProfesor" value="Apellido: #{profesorFormBean.apellido}"></h:outputLabel>
                          <br></br>
                         <h:outputLabel id="lblNombreProfesor" value="Nombre: #{profesorFormBean.profesor.nombre}"></h:outputLabel>
                     </p:dialog>
+           </h:form>
     </h:body>
 </html>
 
